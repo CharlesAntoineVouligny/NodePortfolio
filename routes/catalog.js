@@ -114,9 +114,4 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 // GET request for list of all BookInstance.
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
-// Output "You're so cool"
-router.get('/cool', function(req, res) {
-    res.send("You're so cool");
-  });
-
 module.exports = router;
