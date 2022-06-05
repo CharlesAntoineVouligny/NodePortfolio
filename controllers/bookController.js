@@ -9,9 +9,16 @@ var async = require('async');
 
 // Dummy search function
 exports.search = function (req, res, next) {
-    Book.find({$text: {$search: req.query.search}}).exec(function (err, book) {
-        res.send('NOT IMPLEMENTED: Search Page: ' + book);
+    const searchkey = req.query.search;
+
+    Book.find({$text: {$search: searchkey}}, 'title author').populate('author').exec(function (err, list_books) {
+        if (err) { return next(err) }
+            else {
+                // Successful, so render
+                res.render('search_results', { searchkey: searchkey, book_list: list_books });
+            }
     })
+
 
 }
 

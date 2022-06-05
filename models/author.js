@@ -45,5 +45,7 @@ AuthorSchema
   return '/catalog/author/' + this._id;
 });
 
+AuthorSchema.index({name: 'text'});
+
 //Export model
 module.exports = mongoose.model('Author', AuthorSchema);

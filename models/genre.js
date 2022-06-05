@@ -13,5 +13,7 @@ GenreSchema
   return '/catalog/genre/'+this._id;
 });
 
+GenreSchema.index({name: 'text'});
+
 // Export model.
 module.exports = mongoose.model('Genre', GenreSchema);
