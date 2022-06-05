@@ -34,7 +34,13 @@ html(lang='en')
                 a(href='/catalog/book/create') Create new book
               li 
                 a(href='/catalog/bookinstance/create') Create new book instance (copy)
-
+              li
+                hr
+              li
+                form(method='get' action='/search')
+                  input#search.form-control(type='text' placeholder='Search'
+                  name='search' required='true' value=(undefined===book ? '' : book.title))
+                  button.btn.btn-primary(type="submit" action="/search")
 
         div(class='col-sm-10')
           block content

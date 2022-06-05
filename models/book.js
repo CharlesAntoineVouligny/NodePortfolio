@@ -19,5 +19,8 @@ BookSchema
   return '/catalog/book/' + this._id;
 });
 
+// Make an index
+BookSchema.index({title: 'text'});
+
 //Export model
 module.exports = mongoose.model('Book', BookSchema);
