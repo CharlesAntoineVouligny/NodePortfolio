@@ -30,17 +30,10 @@ exports.index = function(req, res) {
     });
 };
 
-// exports.search = function(req, res, next) {
-//       Book.find({}, req.params.key).exec(function(err, search_book) {
-
-//       })
-// }
-
-
 // Display list of all books.
 exports.book_list = function(req, res, next) {
 
-  Book.find({}, 'title author')
+  Book.find({}, 'tilte author')
     .sort({title : 1})
     .populate('author').exec(function (err, list_books) {
       if (err) {return next(err)} 
