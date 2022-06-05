@@ -5,3 +5,6 @@ use template
 npm install
 test with npm run devstart
 deploy using heroku website
+
+
+Checkout the Wiki page!
