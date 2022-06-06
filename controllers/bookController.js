@@ -19,7 +19,6 @@ exports.search = function (req, res, next) {
             }
     })
 
-
 }
 
 exports.index = function (req, res) {
